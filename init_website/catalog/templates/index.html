@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="panel">
+
+                <h1><center>CalCount<center></h1>
+                <p>num_foods: {{ num_foods }}</p>
+
+                <form action="get_cal_count" method="post">
+                	{% csrf_token %}
+            		<input type="text" name="food"><br>
+            		<input type="submit" value="Submit">
+                </form>
+
+                {% if messages %}
+			        {% for message in messages %}
+			            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+			        {% endfor %}
+				{% endif %}
+
+                <div>
+                    <small class="text-muted"><center>Katyayni Gupta.</a> University of Illinois at Urbana-Champaign 2017.</center></a></small>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
