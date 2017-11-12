@@ -36,4 +36,3 @@ def get_cal_count(request):
 			messages.add_message(request, messages.INFO, calories_message)	
 
 	return HttpResponseRedirect('/')
-	# return render(None, 'index.html', context={'num_foods': num_foods, 'num_calories': calories})
